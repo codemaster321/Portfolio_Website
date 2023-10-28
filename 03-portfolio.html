@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!DOCTYPE html>
+    <html lang="en">
+      <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Accordion Component</title>
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+          rel="stylesheet"
+        />
+
+        <style>
+          /*
+                    SPACING SYSTEM (px)
+                    2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+                    FONT SIZE SYSTEM (px)
+                    10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+                    */
+
+          /*
+                    MAIN COLOR: #087f5b
+                    GREY COLOR: #343a40
+                    */
+
+          * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+          }
+
+          /* ------------------------ */
+          /* GENERAL STYLES */
+          /* ------------------------ */
+          body {
+            font-family: "Inter", sans-serif;
+
+            line-height: 1;
+          }
+
+          header {
+            display: flex;
+
+            align-items: center;
+
+            background-color: #087f5b;
+            font-size: 24px;
+            /* margin: 0 100px; */
+            padding: 20px 50px;
+
+            justify-content: flex-end;
+            align-items: center;
+            gap: 20px;
+            color: #fff;
+            width: 100%;
+            height: 100px;
+          }
+
+          nav div {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+          }
+
+          .nav-title {
+            margin-right: auto;
+            margin-left: 12px;
+          }
+
+          nav a:hover {
+            background-color: #034430;
+          }
+
+          .e {
+            width: 100px;
+            margin: 0 10px;
+            margin-bottom: 15px;
+          }
+          div a {
+            text-decoration: none;
+            color: #fff;
+          }
+
+          .btn {
+            width: 40px;
+            height: 40px;
+            margin: 0 10px;
+          }
+
+          .btn-icon {
+            width: 24px;
+            height: 24px;
+          }
+
+          .container {
+            width: 100%;
+            height: 800px;
+            background-color: #0c8599;
+            display: grid;
+            grid-template-rows: repeat(1fr, 3);
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            padding: 0 80px;
+            padding-top: 100px;
+          }
+
+          img {
+            width: 200px;
+            height: 200px;
+          }
+
+          .main-container {
+            height: 100vh;
+            width: 100%;
+            background-color: #0c9963;
+            display: flex;
+          }
+
+          .about-me {
+            margin: 150px 100px 150px 100px;
+            color: #fff;
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+
+            gap: 20px;
+          }
+
+          .about-me h1 {
+            font-size: 48px;
+          }
+
+          .about-me--description {
+            color: #dee2e6;
+          }
+
+          .funny-photo {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            padding-top: 80px;
+          }
+
+          .funny-photo img {
+            width: 400px;
+            height: 300px;
+            border-radius: 50%;
+          }
+
+          .btns {
+            margin-top: 30px;
+            gap: 30px;
+            display: flex;
+          }
+
+          .btn1 {
+            width: 150px;
+            height: 48px;
+            background-color: #d3f9d8;
+            border: none;
+            box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+            border-radius: 5%;
+            font-size: 20px;
+            font-weight: 500;
+            font-style: calibri;
+          }
+        </style>
+      </head>
+      <body>
+        <header>
+          <h2 class="nav-title">!Shiv</h2>
+          <nav>
+            <div class="e"><a href="#">Portfolio</a></div>
+            <div class="e"><a href="#">About</a></div>
+
+            <div class="e"><a href="#">Contact</a></div>
+
+            <div class="e"><a href="#">Hangout</a></div>
+            <div class="btn">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="btn-icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+                />
+              </svg>
+            </div>
+          </nav>
+        </header>
+
+        <main>
+          <div class="main-container">
+            <div class="about-me">
+              <h1>Hey this is Shivendra Shukla!!!</h1>
+              <p class="about-me--description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt,
+                aut. Libero necessitatibus minus temporibus, voluptatum ea quia
+                provident. Nisi, doloremque consectetur! Enim ratione aliquam
+                nesciunt officiis quod exercitationem ea porro.
+              </p>
+              <div class="btns">
+                <button class="btn1 btn--1">About me</button>
+                <button class="btn1 btn--2">Past Projects</button>
+              </div>
+            </div>
+
+            <div class="funny-photo"><img src="portfolio.jpg" alt="" /></div>
+          </div>
+        </main>
+
+        <section>
+          <div class="container">
+            <img
+              src="https://media.designcafe.com/wp-content/uploads/2023/01/31151510/contemporary-interior-design-ideas-for-your-home.jpg"
+              alt=""
+            />
+            <img
+              src="https://media.designcafe.com/wp-content/uploads/2023/01/31151510/contemporary-interior-design-ideas-for-your-home.jpg"
+              alt=""
+            />
+            <img
+              src="https://media.designcafe.com/wp-content/uploads/2023/01/31151510/contemporary-interior-design-ideas-for-your-home.jpg"
+              alt=""
+            />
+            <img
+              src="https://media.designcafe.com/wp-content/uploads/2023/01/31151510/contemporary-interior-design-ideas-for-your-home.jpg"
+              alt=""
+            />
+            <img
+              src="https://media.designcafe.com/wp-content/uploads/2023/01/31151510/contemporary-interior-design-ideas-for-your-home.jpg"
+              alt=""
+            />
+            <img
+              src="https://media.designcafe.com/wp-content/uploads/2023/01/31151510/contemporary-interior-design-ideas-for-your-home.jpg"
+              alt=""
+            />
+            <img
+              src="https://media.designcafe.com/wp-content/uploads/2023/01/31151510/contemporary-interior-design-ideas-for-your-home.jpg"
+              alt=""
+            />
+            <img
+              src="https://media.designcafe.com/wp-content/uploads/2023/01/31151510/contemporary-interior-design-ideas-for-your-home.jpg"
+              alt=""
+            />
+          </div>
+        </section>
+      </body>
+    </html>
+  </head>
+</html>
