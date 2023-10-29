@@ -30,6 +30,8 @@ const revealSection = function (entries, observer) {
   console.log(entry);
   if (!entry.isIntersecting) return;
   entry.target.classList.remove("section-hidden");
+
+  sectionObserver.unobserve(section);
 };
 
 const sectionObserver = new IntersectionObserver(revealSection, {
@@ -41,3 +43,20 @@ allSections.forEach((section) => {
   sectionObserver.observe(section);
   section.classList.add("section-hidden");
 });
+
+const openModal = document.querySelector(".show-modal");
+openModal.addEventListener("click", (e) => {
+  e.preventDefault();
+  document.querySelector(".modal").classList.remove("hidden");
+  document.querySelector(".overlay--contact").classList.remove("hidden");
+});
+
+document.querySelector(".close-modal").addEventListener("click", (e) => {
+  e.preventDefault();
+  closeModal();
+});
+
+function closeModal() {
+  document.querySelector(".modal").classList.add("hidden");
+  document.querySelector(".overlay--contact").classList.add("hidden");
+}

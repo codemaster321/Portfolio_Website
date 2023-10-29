@@ -39,6 +39,7 @@
       #map {
         height: 500px;
         margin: 50px 20px;
+        z-index: 0;
       }
 
       * {
@@ -215,6 +216,17 @@
         background-color: #99e9f2;
       }
 
+      .overlay--contact {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        backdrop-filter: blur(3px);
+        z-index: 5;
+      }
+
       .im:hover .overlay {
         opacity: 1;
       }
@@ -238,6 +250,7 @@
         gap: 200px;
         color: #fff;
         margin-top: 100px;
+        position: relative;
       }
 
       .contact-me {
@@ -262,6 +275,35 @@
       .section-hidden {
         opacity: 0;
         transform: translateY(8rem);
+      }
+
+      .modal {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 60%;
+
+        background-color: white;
+        padding: 6rem;
+        border-radius: 5px;
+        box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
+        z-index: 10;
+        color: black;
+      }
+
+      .close-modal {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        font-size: 4rem;
+        background: none;
+        border: none;
+        color: #868e96;
+      }
+
+      .hidden {
+        display: none;
       }
     </style>
   </head>
@@ -373,8 +415,13 @@
         <input class="email" type="email" name="" id="" />
         <span>Message</span>
         <textarea name="" id="" cols="30" rows="10"></textarea>
-        <button>Submit!!</button>
+        <button class="show-modal">Submit!!</button>
       </div>
+      <div class="modal hidden">
+        <button class="close-modal">&times;</button>
+        <h1>I will reach u back ASAP!!😍</h1>
+      </div>
+      <div class="overlay--contact hidden"></div>
     </footer>
   </body>
 </html>
